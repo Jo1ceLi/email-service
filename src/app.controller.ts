@@ -7,6 +7,9 @@ import { SendEmailEvent } from './send-email-event.dto';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
+  getHello() {
+    return 'Hello World!';
+  }
   @EventPattern('send_email')
   async sendEmail(@Payload() data: SendEmailEvent, @Ctx() context: RmqContext) {
     console.log(data.to);
