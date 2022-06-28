@@ -85,5 +85,10 @@ get user and password:
 username="$(kubectl get secret hello-world-default-user -o jsonpath='{.data.username}' | base64 --decode)"
 echo "username: $username"
 password="$(kubectl get secret hello-world-default-user -o jsonpath='{.data.password}' | base64 --decode)"
-echo "password: $password"
+echo "password: $password"`
 ```
+
+## Docker build
+
+mac m1 chip:
+`docker build --platform linux/amd64 -t gcr.io/xxx/xxx .`
